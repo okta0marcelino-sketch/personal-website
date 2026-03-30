@@ -1,12 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Download, ChevronRight, Activity } from "lucide-react";
+import { Download, ChevronRight, Activity, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { useResumeDownload } from "@/context/ResumeDownloadContext";
 
 export default function HeroSection() {
+  const { isDownloaded, triggerDownload } = useResumeDownload();
+
   return (
     <section id="about" className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
       {/* Background Mesh */}
@@ -69,17 +71,31 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-lg text-gray-400 max-w-xl leading-relaxed">
-            Have a 3+ Years using test automation frameworks to guarantee flawless software delivery. If it can be tested, I can automate it.
+            Have 3+ Years using test automation frameworks to guarantee flawless software delivery. If it can be tested, I can automate it.
           </p>
 
           <div className="flex flex-wrap gap-4 mt-4">
             <a
               href="/CV_Marcelino_Oktaviansyah_QA_Engineer.pdf"
               download
-              className="bg-[oklch(var(--neon-primary))] text-black hover:bg-[oklch(var(--neon-primary))/80] group h-12 px-6 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors"
+              onClick={triggerDownload}
+              className={`group h-12 px-6 inline-flex items-center justify-center rounded-md text-sm font-medium transition-all ${
+                isDownloaded
+                  ? "bg-green-500 text-white"
+                  : "bg-[oklch(var(--neon-primary))] text-black hover:bg-[oklch(var(--neon-primary))/80]"
+              }`}
             >
-              Download Resume
-              <Download className="ml-2 w-4 h-4 group-hover:-translate-y-1 transition-transform" />
+              {isDownloaded ? (
+                <>
+                  Downloaded!
+                  <Check className="ml-2 w-4 h-4" />
+                </>
+              ) : (
+                <>
+                  Download Resume
+                  <Download className="ml-2 w-4 h-4 group-hover:-translate-y-1 transition-transform" />
+                </>
+              )}
             </a>
             <a
               href="https://wa.me/6281324969451"
