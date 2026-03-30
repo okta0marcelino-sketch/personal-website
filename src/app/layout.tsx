@@ -19,6 +19,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "SDET Portfolio | Software Development Engineer in Test",
   description: "Professional portfolio for an SDET specializing in test automation, quality engineering, and CI/CD pipelines.",
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({
