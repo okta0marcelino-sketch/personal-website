@@ -92,7 +92,7 @@ export default function Navbar() {
             href="/CV_Marcelino_Oktaviansyah_QA_Engineer.pdf"
             download
             onClick={triggerDownload}
-            className={`inline-flex items-center gap-2 justify-center rounded-md text-sm font-medium border transition-all h-10 px-4 py-2 ${
+            className={`inline-flex items-center gap-2 justify-center rounded-md text-sm font-medium border transition-all h-10 px-4 py-2 cursor-pointer ${
               isDownloaded
                 ? "border-green-500 bg-green-500/20 text-green-400"
                 : "border-white/20 hover:border-[oklch(var(--neon-primary))] hover:bg-[oklch(var(--neon-primary))/10]"
@@ -140,7 +140,7 @@ export default function Navbar() {
                 href="/CV_Marcelino_Oktaviansyah_QA_Engineer.pdf"
                 download
                 onClick={triggerDownload}
-                className={`w-full py-6 text-lg inline-flex items-center justify-center gap-3 rounded-md font-medium transition-all ${
+                className={`w-full py-6 text-lg inline-flex items-center justify-center gap-3 rounded-md font-medium transition-all cursor-pointer ${
                   isDownloaded
                     ? "bg-green-500 text-white"
                     : "bg-[oklch(var(--neon-primary))] text-black hover:bg-[oklch(var(--neon-primary))/80]"

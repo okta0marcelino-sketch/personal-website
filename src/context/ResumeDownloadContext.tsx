@@ -27,8 +27,12 @@ export function ResumeDownloadProvider({ children }: { children: ReactNode }) {
 
 export function useResumeDownload() {
   const context = useContext(ResumeDownloadContext);
+  // Return safe fallback if context is not available (prevents crashes)
   if (context === undefined) {
-    throw new Error("useResumeDownload must be used within a ResumeDownloadProvider");
+    return {
+      isDownloaded: false,
+      triggerDownload: () => {},
+    };
   }
   return context;
 }
