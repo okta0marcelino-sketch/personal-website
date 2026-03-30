@@ -21,7 +21,7 @@ const testimonials: Testimonial[] = [
     company: "XL Axiata",
     content:
       "The test automation framework reduced our regression cycle from 3 days to 4 hours. Absolutely game-changing for our delivery pipeline.",
-    avatar: "SC",
+    avatar: "FI",
     rating: 5,
   },
   {
@@ -31,7 +31,7 @@ const testimonials: Testimonial[] = [
     company: "IdStar",
     content:
       "Quality metrics improved by 340% after implementation. The CI/CD integration was seamless and the documentation was impeccable.",
-    avatar: "MR",
+    avatar: "MI",
     rating: 5,
   },
   {
@@ -41,7 +41,7 @@ const testimonials: Testimonial[] = [
     company: "SinarmasLand",
     content:
       "Zero critical bugs in production for 8 months straight. The attention to edge cases and comprehensive test coverage is remarkable.",
-    avatar: "EW",
+    avatar: "YL",
     rating: 5,
   },
   {
@@ -56,29 +56,29 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 5,
-    name: "Alexandra Petrov",
+    name: "Fakhri",
     role: "Senior QA Manager",
-    company: "CloudNine Inc",
+    company: "ComoTV",
     content:
       "The automated testing suite caught 47 critical issues before they reached production. Saved us an estimated $2M in potential damages.",
-    avatar: "AP",
+    avatar: "FH",
     rating: 5,
   },
   {
     id: 6,
-    name: "James Thompson",
+    name: "Iqbal Permana",
     role: "DevOps Director",
-    company: "DataStream",
+    company: "Axiata Digital Labs",
     content:
       "Integration with our existing toolchain was effortless. Performance testing capabilities exceeded all our expectations.",
-    avatar: "JT",
+    avatar: "IP",
     rating: 5,
   },
   {
     id: 7,
-    name: "Nina Patel",
+    name: "Agung",
     role: "Software Architect",
-    company: "InnovateLabs",
+    company: "IDStar",
     content:
       "The code quality and testing methodology transformed our entire development culture. A true professional who delivers excellence.",
     avatar: "NP",
@@ -86,9 +86,9 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 8,
-    name: "Robert Chang",
+    name: "Satrio",
     role: "Head of Quality",
-    company: "SecureNet",
+    company: "Axiata Digital Labs",
     content:
       "Security testing protocols were beyond thorough. Found vulnerabilities that three previous audits had missed. Exceptional work.",
     avatar: "RC",
