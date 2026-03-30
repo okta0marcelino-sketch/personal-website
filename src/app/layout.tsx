@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import ScrollProgress from "@/components/ScrollProgress";
+import { ResumeDownloadProvider } from "@/context/ResumeDownloadContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -58,8 +59,10 @@ export default function RootLayout({
           forcedTheme="dark"
           disableTransitionOnChange
         >
-          <ScrollProgress />
-          {children}
+          <ResumeDownloadProvider>
+            <ScrollProgress />
+            {children}
+          </ResumeDownloadProvider>
         </ThemeProvider>
       </body>
     </html>

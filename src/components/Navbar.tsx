@@ -2,14 +2,15 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, TerminalSquare } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Menu, TerminalSquare, Download, Check } from "lucide-react";
+import { motion } from "framer-motion";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
+import { useResumeDownload } from "@/context/ResumeDownloadContext";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("about");
+  const { isDownloaded, triggerDownload } = useResumeDownload();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,9 +91,24 @@ export default function Navbar() {
           <a
             href="/CV_Marcelino_Oktaviansyah_QA_Engineer.pdf"
             download
-            className="inline-flex items-center justify-center rounded-md text-sm font-medium border border-white/20 hover:border-[oklch(var(--neon-primary))] hover:bg-[oklch(var(--neon-primary))/10] transition-all h-10 px-4 py-2"
+            onClick={triggerDownload}
+            className={`inline-flex items-center gap-2 justify-center rounded-md text-sm font-medium border transition-all h-10 px-4 py-2 ${
+              isDownloaded
+                ? "border-green-500 bg-green-500/20 text-green-400"
+                : "border-white/20 hover:border-[oklch(var(--neon-primary))] hover:bg-[oklch(var(--neon-primary))/10]"
+            }`}
           >
-            Resume
+            {isDownloaded ? (
+              <>
+                <Check className="w-4 h-4" />
+                Downloaded
+              </>
+            ) : (
+              <>
+                <Download className="w-4 h-4" />
+                Resume
+              </>
+            )}
           </a>
         </nav>
 
@@ -123,9 +139,24 @@ export default function Navbar() {
               <a
                 href="/CV_Marcelino_Oktaviansyah_QA_Engineer.pdf"
                 download
-                className="w-full bg-[oklch(var(--neon-primary))] text-black hover:bg-[oklch(var(--neon-primary))/80] py-6 text-lg inline-flex items-center justify-center rounded-md font-medium transition-colors"
+                onClick={triggerDownload}
+                className={`w-full py-6 text-lg inline-flex items-center justify-center gap-3 rounded-md font-medium transition-all ${
+                  isDownloaded
+                    ? "bg-green-500 text-white"
+                    : "bg-[oklch(var(--neon-primary))] text-black hover:bg-[oklch(var(--neon-primary))/80]"
+                }`}
               >
-                Download Resume
+                {isDownloaded ? (
+                  <>
+                    <Check className="w-5 h-5" />
+                    Downloaded!
+                  </>
+                ) : (
+                  <>
+                    <Download className="w-5 h-5" />
+                    Download Resume
+                  </>
+                )}
               </a>
             </div>
           </SheetContent>
