@@ -48,7 +48,7 @@ export default function Navbar() {
     { name: "About", href: "#about", id: "about" },
     { name: "Tech Stack", href: "#tech-stack", id: "tech-stack" },
     { name: "Projects", href: "#projects", id: "projects" },
-    { name: "Contact", href: "https://wa.me/6283193443486", id: "contact", isExternal: true },
+    { name: "Contact", href: "https://wa.me/6281324969451", id: "contact", isExternal: true },
   ];
 
   return (
@@ -87,9 +87,13 @@ export default function Navbar() {
               )}
             </Link>
           ))}
-          <Button variant="outline" className="border-white/20 hover:border-[oklch(var(--neon-primary))] hover:bg-[oklch(var(--neon-primary))/10] transition-all">
+          <a
+            href="/CV_Marcelino_Oktaviansyah_QA_Engineer.pdf"
+            download
+            className="inline-flex items-center justify-center rounded-md text-sm font-medium border border-white/20 hover:border-[oklch(var(--neon-primary))] hover:bg-[oklch(var(--neon-primary))/10] transition-all h-10 px-4 py-2"
+          >
             Resume
-          </Button>
+          </a>
         </nav>
 
         {/* Mobile Nav */}
@@ -116,9 +120,13 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <Button className="w-full bg-[oklch(var(--neon-primary))] text-black hover:bg-[oklch(var(--neon-primary))/80] py-6 text-lg">
+              <a
+                href="/CV_Marcelino_Oktaviansyah_QA_Engineer.pdf"
+                download
+                className="w-full bg-[oklch(var(--neon-primary))] text-black hover:bg-[oklch(var(--neon-primary))/80] py-6 text-lg inline-flex items-center justify-center rounded-md font-medium transition-colors"
+              >
                 Download Resume
-              </Button>
+              </a>
             </div>
           </SheetContent>
         </Sheet>
