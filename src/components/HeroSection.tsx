@@ -69,7 +69,7 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-lg text-gray-400 max-w-xl leading-relaxed">
-            Have a 3+ Years using test automation frameworks to guarantee flawless software delivery. If it can be tested, I can automate it.
+            Have 3+ Years using test automation frameworks to guarantee flawless software delivery. If it can be tested, I can automate it.
           </p>
 
           <div className="flex flex-wrap gap-4 mt-4">
