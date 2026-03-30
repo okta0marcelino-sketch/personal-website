@@ -16,9 +16,9 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Sarah Chen",
+    name: "Fitri",
     role: "Engineering Lead",
-    company: "TechCorp Systems",
+    company: "XL Axiata",
     content:
       "The test automation framework reduced our regression cycle from 3 days to 4 hours. Absolutely game-changing for our delivery pipeline.",
     avatar: "SC",
@@ -26,9 +26,9 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    name: "Marcus Rodriguez",
+    name: "Muhammad Iqbal",
     role: "VP of Engineering",
-    company: "FinanceFlow",
+    company: "IdStar",
     content:
       "Quality metrics improved by 340% after implementation. The CI/CD integration was seamless and the documentation was impeccable.",
     avatar: "MR",
@@ -36,9 +36,9 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 3,
-    name: "Emily Watson",
+    name: "Yolanda",
     role: "Product Manager",
-    company: "HealthTech Solutions",
+    company: "SinarmasLand",
     content:
       "Zero critical bugs in production for 8 months straight. The attention to edge cases and comprehensive test coverage is remarkable.",
     avatar: "EW",
@@ -46,12 +46,12 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 4,
-    name: "David Kim",
+    name: "Sabar",
     role: "CTO",
-    company: "StartupX",
+    company: "MolaTV",
     content:
       "Best investment we made for our QA infrastructure. ROI was visible within the first sprint. Highly recommend for any serious engineering team.",
-    avatar: "DK",
+    avatar: "SB",
     rating: 5,
   },
   {
