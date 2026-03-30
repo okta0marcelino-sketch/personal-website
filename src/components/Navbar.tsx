@@ -10,9 +10,11 @@ import { useResumeDownload } from "@/context/ResumeDownloadContext";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("about");
+  const [mounted, setMounted] = useState(false);
   const { isDownloaded, triggerDownload } = useResumeDownload();
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
@@ -93,12 +95,12 @@ export default function Navbar() {
             download
             onClick={triggerDownload}
             className={`inline-flex items-center gap-2 justify-center rounded-md text-sm font-medium border transition-all h-10 px-4 py-2 cursor-pointer ${
-              isDownloaded
+              mounted && isDownloaded
                 ? "border-green-500 bg-green-500/20 text-green-400"
                 : "border-white/20 hover:border-[oklch(var(--neon-primary))] hover:bg-[oklch(var(--neon-primary))/10]"
             }`}
           >
-            {isDownloaded ? (
+            {mounted && isDownloaded ? (
               <>
                 <Check className="w-4 h-4" />
                 Downloaded
@@ -141,12 +143,12 @@ export default function Navbar() {
                 download
                 onClick={triggerDownload}
                 className={`w-full py-6 text-lg inline-flex items-center justify-center gap-3 rounded-md font-medium transition-all cursor-pointer ${
-                  isDownloaded
+                  mounted && isDownloaded
                     ? "bg-green-500 text-white"
                     : "bg-[oklch(var(--neon-primary))] text-black hover:bg-[oklch(var(--neon-primary))/80]"
                 }`}
               >
-                {isDownloaded ? (
+                {mounted && isDownloaded ? (
                   <>
                     <Check className="w-5 h-5" />
                     Downloaded!

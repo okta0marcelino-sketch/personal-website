@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Download, ChevronRight, Activity, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -7,7 +8,12 @@ import { buttonVariants } from "@/components/ui/button";
 import { useResumeDownload } from "@/context/ResumeDownloadContext";
 
 export default function HeroSection() {
+  const [mounted, setMounted] = useState(false);
   const { isDownloaded, triggerDownload } = useResumeDownload();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <section id="about" className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
@@ -80,12 +86,12 @@ export default function HeroSection() {
               download
               onClick={triggerDownload}
               className={`group h-12 px-6 inline-flex items-center justify-center rounded-md text-sm font-medium transition-all cursor-pointer ${
-                isDownloaded
+                mounted && isDownloaded
                   ? "bg-green-500 text-white"
                   : "bg-[oklch(var(--neon-primary))] text-black hover:bg-[oklch(var(--neon-primary))/80]"
               }`}
             >
-              {isDownloaded ? (
+              {mounted && isDownloaded ? (
                 <>
                   Downloaded!
                   <Check className="ml-2 w-4 h-4" />
