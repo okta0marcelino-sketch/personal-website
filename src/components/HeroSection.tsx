@@ -79,7 +79,7 @@ export default function HeroSection() {
               href="/CV_Marcelino_Oktaviansyah_QA_Engineer.pdf"
               download
               onClick={triggerDownload}
-              className={`group h-12 px-6 inline-flex items-center justify-center rounded-md text-sm font-medium transition-all ${
+              className={`group h-12 px-6 inline-flex items-center justify-center rounded-md text-sm font-medium transition-all cursor-pointer ${
                 isDownloaded
                   ? "bg-green-500 text-white"
                   : "bg-[oklch(var(--neon-primary))] text-black hover:bg-[oklch(var(--neon-primary))/80]"

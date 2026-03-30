@@ -347,9 +347,12 @@ export default function Testimonials() {
           <p className="text-sm text-muted-foreground mb-4">
             Join the growing list of satisfied clients
           </p>
-          <button
+          <a
+            href="https://wa.me/6281324969451"
+            target="_blank"
+            rel="noopener noreferrer"
             className={cn(
-              "inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium",
+              "inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium cursor-pointer",
               "bg-primary/10 border border-primary/50 text-primary",
               "hover:bg-primary/20 hover:border-primary transition-all duration-300",
               "cyber-glow hover:scale-105"
@@ -369,7 +372,7 @@ export default function Testimonials() {
                 d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>
-          </button>
+          </a>
         </div>
       </div>
     </section>
