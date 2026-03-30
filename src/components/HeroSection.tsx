@@ -73,12 +73,16 @@ export default function HeroSection() {
           </p>
 
           <div className="flex flex-wrap gap-4 mt-4">
-            <Button size="lg" className="bg-[oklch(var(--neon-primary))] text-black hover:bg-[oklch(var(--neon-primary))/80] group h-12 px-6">
+            <a
+              href="/CV_Marcelino_Oktaviansyah_QA_Engineer.pdf"
+              download
+              className="bg-[oklch(var(--neon-primary))] text-black hover:bg-[oklch(var(--neon-primary))/80] group h-12 px-6 inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors"
+            >
               Download Resume
               <Download className="ml-2 w-4 h-4 group-hover:-translate-y-1 transition-transform" />
-            </Button>
+            </a>
             <a
-              href="https://wa.me/6283193443486"
+              href="https://wa.me/6281324969451"
               target="_blank"
               rel="noopener noreferrer"
               className={cn(buttonVariants({ variant: "outline", size: "lg" }), "border-white/20 hover:border-[oklch(var(--neon-blue))] hover:bg-[oklch(var(--neon-blue))/10] group h-12 px-6")}
