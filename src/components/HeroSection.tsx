@@ -84,11 +84,13 @@ export default function HeroSection() {
               href="/CV_Marcelino_Oktaviansyah_QA_Engineer.pdf"
               download
               onClick={handleDownload}
-              className={`group h-12 px-6 inline-flex items-center justify-center rounded-md text-sm font-medium transition-all cursor-pointer ${
+              className={cn(
+                "group h-12 px-6 inline-flex items-center justify-center rounded-md text-sm font-medium transition-all cursor-pointer border-2 border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
                 isDownloaded
-                  ? "bg-green-500 text-white"
-                  : "bg-[oklch(var(--neon-primary))] text-black hover:bg-[oklch(var(--neon-primary))/80]"
-              }`}
+                  ? "bg-green-500 text-white border-green-500"
+                  : "bg-primary text-primary-foreground hover:bg-primary/90"
+              )}
+              style={{ boxShadow: '0 0 8px oklch(var(--neon-primary)/0.5)' }}
             >
               {isDownloaded ? (
                 <>

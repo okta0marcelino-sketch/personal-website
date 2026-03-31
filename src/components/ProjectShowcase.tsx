@@ -30,6 +30,13 @@ const PROJECTS = [
     live: "#"
   },
   {
+    title: "Apps Pulsa Later, Paylater, Mobile Topup Automation",
+    description: "A comprehensive end-to-end testing suite for a modern financial services platform using Katalon, and Java",
+    tags: ["Katalon", "Jira", "Trello", "PostgreSQL", "Gitlab", "Oracle", "Postman"],
+    github: "#",
+    live: "#"
+  },
+  {
     title: "Mobile Banking, Core Banking, CS Digital",
     description: "Cross-platform mobile test automation framework designed to assert complex financial transactions and security layers on iOS and Android.",
     tags: ["Appium", "Java", "Katalon", "Jira", "Trello"],

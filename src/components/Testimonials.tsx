@@ -37,7 +37,7 @@ const testimonials: Testimonial[] = [
   {
     id: 3,
     name: "Yolanda",
-    role: "Product Manager",
+    role: "Software Developer",
     company: "SinarmasLand",
     content:
       "Zero critical bugs in production for 8 months straight. The attention to edge cases and comprehensive test coverage is remarkable.",
@@ -236,36 +236,32 @@ function MarqueeRow({
   variant?: "cyan" | "magenta";
   speed?: number;
 }) {
-  const [isPaused, setIsPaused] = useState(false);
   const duplicatedItems = [...items, ...items];
 
   return (
     <div
-      className="relative overflow-hidden py-4"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      className="relative w-full overflow-hidden py-4"
     >
       {/* Gradient masks */}
-      <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-20 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-20 pointer-events-none" />
 
-      <div
-        className={cn(
-          "flex gap-6",
-          direction === "left" ? "animate-marquee" : "animate-marquee-reverse"
-        )}
-        style={{
-          animationDuration: `${speed}s`,
-          animationPlayState: isPaused ? "paused" : "running",
-        }}
-      >
-        {duplicatedItems.map((testimonial, index) => (
-          <TestimonialCard
-            key={`${testimonial.id}-${index}`}
-            testimonial={testimonial}
-            variant={variant}
-          />
-        ))}
+      <div className="flex w-full overflow-x-auto no-scrollbar scroll-smooth">
+        <div 
+          className={cn(
+            "flex gap-6 min-w-max select-none py-4 px-6 pause-on-hover",
+            direction === "left" ? "animate-marquee" : "animate-marquee-reverse"
+          )}
+          style={{ "--duration": `${speed}s` } as React.CSSProperties}
+        >
+          {duplicatedItems.map((testimonial, index) => (
+            <TestimonialCard
+              key={`${testimonial.id}-${index}`}
+              testimonial={testimonial}
+              variant={variant}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
